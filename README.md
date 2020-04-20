@@ -33,7 +33,7 @@ Link to Plectica - https://www.plectica.com/maps/KX1AJLKRM/edit/VQKIHNNFW
 * "start": `node server.js`
 * "devStart": `nodemon server.js`
 
-## Running the tests
+### Running the tests
 
 We use **Nodemon** module to run the server
 
