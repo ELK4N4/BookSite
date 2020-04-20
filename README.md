@@ -27,7 +27,7 @@ Link to Plectica - https://www.plectica.com/maps/KX1AJLKRM/edit/VQKIHNNFW
 
 ### Installing
 
-* First you need to install **NPM**. You can download it from [Here](https://www.npmjs.com/get-npm).
+* First you need to install **NPM**. You can download it from [Here](https://nodejs.org/en/).
 
 * Go to the Repo folder and run the command(after cloning) `npm i`.
 
