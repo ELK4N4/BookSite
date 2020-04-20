@@ -13,6 +13,7 @@ Just another website about books.
 ### Prerequisites
 
 * NPM
+* dotenve
 
 ### Installing
 
