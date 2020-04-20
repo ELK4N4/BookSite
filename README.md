@@ -5,6 +5,8 @@ Just another website about books.
 ### Design Pattern
 MVC
 
+![MVC Diagram](https://pasteboard.co/J4IAO4S.png)
+
 ### DBs Scratch
 Link to Plectica - https://www.plectica.com/maps/KX1AJLKRM/edit/VQKIHNNFW
 
