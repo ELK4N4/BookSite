@@ -56,4 +56,4 @@ We use **Nodemon** module to run the server
 
 * **Elkana Hendler** - [GitHub Account](https://github.com/elkanagit)
 * **Binyamin Haimson** - [GitHub Account](https://github.com/binyamin9913)
-* **Itzik Shteinberger** - [GitHub Account](https://github.com/itzik)
+* **Itzik Shteinberger** - [GitHub Account](https://github.com/itsik135)
