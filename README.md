@@ -41,6 +41,6 @@ We use Nodemon module to run the server
 * MongoDB
 
 
-## Contibutors
+## Team
 
 * **Elkana Hendler** - *Backend - Server* - [GitHub Account](https://github.com/elkanagit)
