@@ -39,6 +39,7 @@ We use Nodemon module to run the server
 * Express.js
 * Mongoose.js
 * MongoDB
+* fs module
 
 
 ## Team
