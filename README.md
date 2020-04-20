@@ -22,7 +22,7 @@ You can download it from [Here](https://www.npmjs.com/get-npm).
 * Go to the Repo folder and run the command `npm i`.
 
 ## NPM Scripts
-* "start": npm server.js
+* "start": nodemon server.js
 
 ## Running the tests
 
