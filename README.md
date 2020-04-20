@@ -16,10 +16,9 @@ Just another website about books.
 
 ### Installing
 
-* First you need to install NPM:
-You can download it from [Here](https://www.npmjs.com/get-npm).
+* First you need to install NPM. You can download it from [Here](https://www.npmjs.com/get-npm).
 
-* Go to the Repo folder and run the command `npm i`.
+* Go to the Repo folder and run the command(after cloning) `npm i`.
 
 ## NPM Scripts
 * "start": nodemon server.js
