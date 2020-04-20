@@ -1,6 +1,6 @@
 # Welcome To BookSite Repo!
 
-One Paragraph of project description goes here
+Just another website about books.
 
 ## Getting Started
 
@@ -32,25 +32,12 @@ until finished
 
 End with an example of getting some data out of the system or using it for a little demo
 
+# NPM Scripts
+* "start": npm server.js
+
 ## Running the tests
 
 We use Nodemon module to run the server
-
-### Break down into end to end tests
-
-Explain what these tests test and why
-
-```
-Give an example
-```
-
-### And coding style tests
-
-Explain what these tests test and why
-
-```
-Give an example
-```
 
 ## Built With
 ### FrontEnd
