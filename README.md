@@ -48,4 +48,4 @@ We use **Nodemon** module to run the server
 
 ## Team
 
-* **Elkana Hendler** - *Backend - Server* - [GitHub Account](https://github.com/elkanagit)
+* **Elkana Hendler** - [GitHub Account](https://github.com/elkanagit)
