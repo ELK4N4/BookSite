@@ -2,8 +2,6 @@
 
 Just another website about books.
 
-## Which Technologies Will Be Used In The Project:
-
 
 ### Prerequisites
 
