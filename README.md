@@ -21,7 +21,8 @@ Just another website about books.
 * Go to the Repo folder and run the command(after cloning) `npm i`.
 
 ## NPM Scripts
-* "start": `nodemon server.js`
+* "start": `node server.js`
+* "devStart": `nodemon server.js`
 
 ## Running the tests
 
