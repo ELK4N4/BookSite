@@ -40,6 +40,7 @@ We use Nodemon module to run the server
 * Mongoose.js
 * MongoDB
 * fs module
+* EJS
 
 
 ## Team
