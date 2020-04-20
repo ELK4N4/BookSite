@@ -11,8 +11,8 @@ Just another website about books.
 
 ### Installing
 
-* First you need to install NPM.
-You can download NPM from [Here](https://www.npmjs.com/get-npm).
+Install NPM:
+You can download it from [Here](https://www.npmjs.com/get-npm). 
 
 ## NPM Scripts
 * "start": npm server.js
