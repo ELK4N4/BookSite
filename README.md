@@ -14,6 +14,8 @@ Just another website about books.
 
 * NPM
 * dotenve
+* MongoAtlas
+* Heroku
 
 ### Installing
 
