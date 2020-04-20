@@ -5,7 +5,7 @@ Just another website about books.
 ### Design Pattern
 MVC
 
-![MVC Diagram](https://pasteboard.co/J4IAO4S.png)
+![MVC Diagram](https://www.researchgate.net/publication/330140206/figure/fig8/AS:711336036151302@1546607135603/Model-View-ControlMVC-design-pattern.png)
 
 ### DBs Scratch
 Link to Plectica - https://www.plectica.com/maps/KX1AJLKRM/edit/VQKIHNNFW
