@@ -34,4 +34,8 @@ app.use('/', indexRouter);
 app.use('/books', booksRouter);
 
 
-app.listen(PORT, console.log(`Listening at port ${PORT}...`));
+app.listen(PORT, () => {
+    process.stdout.write('\033[2J');
+    console.clear();
+    console.log(`Listening at port ${PORT}...`);
+});
