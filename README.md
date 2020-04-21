@@ -10,9 +10,19 @@ MVC
 ### DBs Scratch
 Link to Plectica - https://www.plectica.com/maps/KX1AJLKRM/edit/VQKIHNNFW
 
+## First Setup
+
+1. Install **MongoDB Service** from [Here](https://www.mongodb.com/download-center/community)
+2. Install **Node.js** from [Here](https://nodejs.org/en/)
+3. Clone this repo to your local machine using `git clone https://github.com/elkanagit/BookSite.git`
+4. Go to the path of your local repo and run `npm i`
+5. Create a new file in the main directory that called `.env` and put there `DATABASE_URL=mongodb://localhost/test`
+6. The party is begin!
+
+
 ## Contributing
 
-1. Clone this repo to your local machine using `git clone https://github.com/elkanagit/BookSite.git`
+1. Pull this repo to your local machine using `git clone https://github.com/elkanagit/BookSite.git`
 2. Create your feature branch: `git checkout -b my-new-feature`
 3. Commit your changes: `git commit -am 'Add some feature'`
 4. Push to the branch: `git push origin my-new-feature`
@@ -24,12 +34,6 @@ Link to Plectica - https://www.plectica.com/maps/KX1AJLKRM/edit/VQKIHNNFW
 * dotenve
 * MongoAtlas
 * Heroku
-
-### Installing
-
-* First you need to install **NPM**. You can download it from [Here](https://nodejs.org/en/).
-
-* Go to the Repo folder and run the command(after cloning) `npm i`.
 
 ## NPM Scripts
 * "start": `node server.js`
