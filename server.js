@@ -4,6 +4,8 @@ const express = require('express');
 const app = express();
 
 const indexRouter = require('./routes/index.js');
+const booksRouter = require('./routes/books.js');
+
 const expressLayout = require('express-ejs-layouts');
 const bodyParser = require('body-parser');
 
@@ -24,5 +26,6 @@ db.on('error', error => console.log(error));
 db.once('open', () => {console.log('Mongoose is connected');});
 
 app.use('/', indexRouter);
+app.use('/books', booksRouter);
 
 app.listen(PORT, console.log(`Listening at port ${PORT}...`));
