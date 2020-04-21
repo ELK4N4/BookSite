@@ -31,7 +31,7 @@ Link to Plectica - https://www.plectica.com/maps/KX1AJLKRM/edit/VQKIHNNFW
 ### Prerequisites
 
 * NPM
-* dotenve
+* dotenv
 * MongoAtlas
 * Heroku
 
