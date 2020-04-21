@@ -5,6 +5,7 @@ const app = express();
 
 const indexRouter = require('./routes/index.js');
 const expressLayout = require('express-ejs-layouts');
+const bodyParser = require('body-parser');
 
 const PORT = process.env.PORT || 3000;
 
@@ -13,6 +14,7 @@ app.set('views', __dirname + '/views');
 app.set('layout', 'layouts/layout');
 app.use(expressLayout);
 app.use(express.static('public'));
+app.use(bodyParser.urlencoded({ limit: '10mb', extended: false }));
 
 const mongoose = require('mongoose');
 mongoose.connect(process.env.DATABASE_URL, { useUnifiedTopology: true, useNewUrlParser: true });
