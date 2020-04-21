@@ -1,6 +1,7 @@
 require('dotenv').config();
 
 const express = require('express');
+const favicon = require('serve-favicon');
 const app = express();
 
 const indexRouter = require('./routes/index.js');
@@ -17,15 +18,20 @@ app.set('views', __dirname + '/views');
 app.set('layout', 'layouts/layout');
 app.use(expressLayout);
 app.use(express.static('public'));
+app.use(favicon(__dirname + '/public/images/favicon.ico'));
 app.use(bodyParser.urlencoded({ limit: '10mb', extended: false }));
 
+/* DataBase */
 const mongoose = require('mongoose');
 mongoose.connect(DATABASE_URL, { useUnifiedTopology: true, useNewUrlParser: true });
 const db = mongoose.connection;
 db.on('error', error => console.log(error));
 db.once('open', () => {console.log('Mongoose is connected');});
 
+
+/* Middleware */
 app.use('/', indexRouter);
 app.use('/books', booksRouter);
+
 
 app.listen(PORT, console.log(`Listening at port ${PORT}...`));
