@@ -1,3 +1,597 @@
 body {
+    margin: 0;
+    user-select: none;
+    
+  }
+  .d1{
+    font-family: 'Bebas Neue', cursive;
+    font-size: 500%;
+    
+  }
+  .d2{
+    font-family: 'Yanone Kaffeesatz', sans-serif;
+    font-size: 200%;
+  }
+  
+  .d5{
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 275%;
+    max-width: 93vw;
+    
+  }
+  .d6{
+    font-family: 'Yanone Kaffeesatz', sans-serif;
+    font-size: 350%;
+  }
+  
+  .topnav {
+    position: fixed; /* Set the navbar to fixed position */
+    top: 0; /* Position the navbar at the top of the page */
+    width: 100%;
+    overflow: hidden;
+    background-color: rgb(53, 51, 51);
+    
+  }
+  
+  .topnav a {
+    font-family: "Times New Roman", Times, serif;
+    float: left;
+    display: block;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 25px;
+  }
+  
+.logoutimg{
+  width: 35px; 
+  height: 30px; 
+  margin-top: 15px;
+}
+.logoutimg:hover{
+  width: 38px; 
+  height: 33px; 
+  margin-top: 12px;
+}
+
+  .topnav a:hover {
+    
+      background-color: rgb(132, 130, 130);
+  }
+  
+  .topnav a.active {
+    
+    color: rgb(218, 218, 218);
     font-weight: bold;
+    
+  }
+  
+  .topnav .icon {
+    display: none;
+  }
+  
+  @media screen and (max-width: 410px) {
+    
+      
+      .topnav a{
+        font-size: 17px;
+      }
+      .logoutimg{
+        width: 25px; 
+        height: 20px; 
+        margin-top: 15px;
+      }
+      .logoutimg:hover{
+        width: 28px; 
+        height: 23px; 
+        margin-top: 13px;
+      }
+  
+    
+  }
+  .b{
+    background-image: url("https://images.assetsdelivery.com/compings_v2/schrades/schrades1106/schrades110600017.jpg");
+    flex: 1;
+  }
+  .bk:hover{
+    margin-top: -8px;
+    
+
+  }
+  .bk{
+    transition: 0.5s;
+  }
+  .BookStyle{
+    
+   
+    -ms-flex-line-pack: center;
+    align-self: stretch;
+      
+      
+      -webkit-box-shadow: 19px 17px 18px -4px rgba(0,0,0,0.51);
+      -moz-box-shadow: 19px 17px 18px -4px rgba(0,0,0,0.51);
+      box-shadow: 19px 17px 18px -4px rgba(0,0,0,0.51);
+      border-style: groove;
+      border-color: #777575a1;
+      align-content: center;
+      flex-wrap: wrap;
+      flex: 1;
+      margin-left: 15%;
+      width: 70%;
+      height: 350px;
+      justify-content: center;
+      align-items: center;
+      font-size: small;
+      
+  
+  }
+
+
+
+  .BookName{
+    border-style: inset;
+   
+    background-color: white;
+    flex-grow: 1;
+    flex-basis: 0;
+    flex: 1;
+    max-width: 80%;
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+    z-index: 999;
+    margin: 0 auto;
+    left: 0;
+    right: 0;
+    margin-top: 18%; 
+    
+  }
+  .AllFilterBooks{
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+
+
+
+  body{
+     
+    
+    background-size: cover;
+    background: linear-gradient(rgba(47, 47, 47, 0.9), rgba(53, 51, 52, 0.89)),url("../images/bookimg.jpg");
+    
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+.title{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 6vh;
+    margin-top: 21vh;
+    text-align:center;
+    color: rgb(255, 255, 255);
+}
+@media (max-width: 600px){
+    .title{  
+        font-size: 35px;
+    } 
+    .BookStyle{
+      
+      width: 50%;
+      margin-left: 25%;
+      height: 250px;
+      font-size: 10px;
+
+    }
+    .d1{
+      
+      font-size: 450%;
+    }
+    .d2{
+      
+      font-size: 150%;
+    }
+    
+    .d5{
+      
+      font-size: 225%;
+      
+    }
+    .d6{
+      
+      font-size: 300%;
+    }
+    
+}
+
+
+.Description{
+  font-family: "Times New Roman", Times, serif;
+  font-size: 4vh;
+  color: rgb(255, 255, 255);
+  text-align:center;
+}
+
+.sign{
+ 
+  max-width: 300px;
+  max-height: 400px;
+  background-color: rgb(51, 50, 50);
+  margin: auto;
+  text-align: center;
+  padding: 10px;
+  border-radius: 10%;
+  box-shadow: 2px 2px #000000;
+  background: rgb(48,48,48);
+background: radial-gradient(circle, rgba(48,48,48,1) 0%, rgba(70,74,70,1) 100%); 
+position: fixed;
+  top: 50%;
+  left: 50%;
+  margin-top: -170px;
+  margin-left: -150px;
+}
+h2{
+  font-size: 35px;
+  text-align: center;
+  color:  rgb(255, 255, 255);
+  text-shadow: 2px 2px #000000;
+}
+.minput{
+  border-radius: 5%;
+  box-shadow: 2px 2px #000000;
+  padding: 10px;
+  margin-bottom: 20px;
+  font-size: 15px;
+}
+
+input[type=submit] ,button{
+  
+  transition: 1s;
+  background-color: #4CAF50;
+  border: none;
+  color: white;
+  padding: 16px 32px;
+  text-decoration: none;
+  margin: 4px 2px;
+  margin-bottom: 20px;
+  cursor: pointer;
+  font-size:20px;
+  text-align: center;
+  
+  
+}
+input[type=submit]  ,button:hover{
+  background-color: rgb(79, 207, 84);
+}
+
+.darkbackround{
+  height: 1000%;
+  width: 1000%;
+  top: -5%;
+  left: 0%;
+  position: fixed;
+  background-size: cover;
+  background-color: #00000098;
+}
+.m{
+  text-align: center;
+  color: white;
+  text-decoration-line: underline;
+}
+.m:hover{
+  color: rgb(172, 173, 180);
+  text-decoration-line: none
+}
+
+.booktitle{
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 6vh;
+  margin-top: 10vh;
+  text-align:center;
+  color: rgb(255, 255, 255);
+}
+
+.searchbook{
+  width: 35%;
+  margin-top: 5px;
+  height:4vh ;
+  font-size: 2.5vh;
+  border-radius: 1%;
+  text-align: center;
+}
+@media (max-width: 850px){
+  .searchbook{
+    width: 55%;
+  }
+  .d5{
+    max-width: 100vw;
+  }
+}
+
+.filter{
+  color: #747171;
+  font-size: 2vh;
+  padding: 0%;
+  margin-top: 0%;
+}
+.filter:hover{
+  color: aliceblue;
+  text-decoration-line: underline; 
+}
+.Ftitle{
+  font-size: 30px;
+  border-bottom: 2px solid #b8d4d6;
+  color: #b8d4d6;
+  font-weight: bold;
+  padding: 2px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.options{
+  user-select: none;
+  margin-top: 2px;
+  text-shadow: 2px 2px #000000;
+  padding: 25px;
+  font-family: Arial, Helvetica, sans-serif;
+  color: #f2f2f2;
+  font-size: 20px;
+
+}
+
+input[type="checkbox"]{
+  display: none;
+}
+
+input[type="checkbox"] + label:before{
+  content: "\2714";
+  border: 0.1em solid rgb(214, 210, 210);
+  border-radius: 0.2em;
+  display: inline-block;
+  width: 1em;
+  height: 1em;
+  padding-left: 0.2em;
+  padding-bottom: 0.3em;
+  margin-right: 0.2em;
+  vertical-align: bottom;
+  color: transparent;
+  transition: .2s;
+  text-shadow: none;
+  
+}
+@media only screen and (orientation:portrait){
+  body {
+    overflow-x: scroll;
+    overflow-y: scroll;
+  }
+}
+
+input[type=checkbox]:checked + label:before {
+  background-color: rgb(93, 93, 93);
+  border-color: rgb(206, 211, 208);
+  color: rgb(255, 243, 243);
+ 
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #7e7c7c72; 
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: rgb(121, 116, 116); 
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: rgb(160, 156, 156); 
+}
+
+div.aria-widget-slider {
+  clear: both;
+  padding-top: 0.5em;
+  padding-bottom: 1em;
+}
+
+div.rail-label {
+  padding-right: 0.5em;
+  text-align: right;
+  float: left;
+  width: 4em;
+  position: relative;
+  top: -0.5em;
+}
+
+div.rail-label.max {
+  padding-left: 0.5em;
+  text-align: left;
+}
+
+div.aria-widget-slider .rail {
+  background-color: #eee;
+  border: 1px solid #888;
+  position: relative;
+  height: 4px;
+  float: left;
+}
+
+div.aria-widget-slider img[role="slider"] {
+  position: absolute;
+  padding: 0;
+  margin: 0;
+  top: -10px;
+}
+
+div.aria-widget-slider img[role="slider"].focus,
+div.aria-widget-slider img[role="slider"]:hover {
+  outline-color: rgb(140, 203, 242);
+  outline-style: solid;
+  outline-width: 2px;
+  outline-offset: 2px;
+}
+
+div.aria-widget-slider .rail.focus {
+  background-color: #aaa;
+}
+
+section.range-slider {
+  position: relative;
+  width: 200px;
+  height: 35px;
+  text-align: center;
+}
+
+section.range-slider input {
+  pointer-events: none;
+  position: absolute;
+  overflow: hidden;
+  left: 0;
+  top: 15px;
+  width: 200px;
+  outline: none;
+  height: 18px;
+  margin: 0;
+  padding: 0;
+}
+
+section.range-slider input::-webkit-slider-thumb {
+  pointer-events: all;
+  position: relative;
+  z-index: 1;
+  outline: 0;
+}
+
+section.range-slider input::-moz-range-thumb {
+  pointer-events: all;
+  position: relative;
+  z-index: 10;
+  -moz-appearance: none;
+  width: 9px;
+}
+
+section.range-slider input::-moz-range-track {
+  position: relative;
+  z-index: -1;
+  background-color: rgba(0, 0, 0, 1);
+  border: 0;
+}
+section.range-slider input:last-of-type::-moz-range-track {
+  -moz-appearance: none;
+  background: none transparent;
+  border: 0;
+}
+section.range-slider input[type=range]::-moz-focus-outer {
+border: 0;
+}
+
+
+
+input[type=range] {
+  
+  -webkit-appearance: none;
+  width: 100%;
+  margin: 0px 0;
+  background-color: #00000000;
+}
+input[type=range]::-webkit-slider-runnable-track {
+  width: 100%;
+  height: 40%;
+  cursor: pointer;
+  border-style: solid;
+  border-color: #c9f5ff;
+  border-width: 0.5px;
+  background: #c9d1d8;
+  border-radius: 1.3px;
+  
+}
+input[type=range]::-webkit-slider-thumb {
+  
+  height: 16px;
+  width: 16px;
+  border-radius: 3px;
+  background: #c6f0fa;
+  cursor: pointer;
+  -webkit-appearance: none;
+  margin-top: -5px;
+}
+
+.Rvalue{
+  margin-left: 5%;
+  font-size: 20px;
+  color: #ffffff;
+  font-weight: bold;
+  font-family: "Lucida Console", Courier, monospace;
+
+}
+
+.container {
+  text-shadow: 2px 2px #000000;
+  font-family: Arial, Helvetica, sans-serif;
+  color: white;
+  display: block;
+  position: relative;
+  padding-left: 35px;
+  margin-bottom: 12px;
+  cursor: pointer;
+  font-size: 20px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+/* Hide the browser's default radio button */
+.container input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+}
+
+/* Create a custom radio button */
+.checkmark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 25px;
+  width: 25px;
+  background-color: rgb(112, 115, 117);
+  border-radius: 50%;
+  text-shadow: 2px 2px #000000;
+}
+
+/* On mouse-over, add a grey background color */
+.container:hover input ~ .checkmark {
+  background-color: rgb(143, 145, 146);
+}
+
+/* When the radio button is checked, add a blue background */
+.container input:checked ~ .checkmark {
+  background-color:rgb(130, 134, 136);
+}
+
+/* Create the indicator (the dot/circle - hidden when not checked) */
+.checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+/* Show the indicator (dot/circle) when checked */
+.container input:checked ~ .checkmark:after {
+  display: block;
+}
+
+/* Style the indicator (dot/circle) */
+.container .checkmark:after {
+ 	top: 9px;
+	left: 9px;
+	width: 8px;
+	height: 8px;
+	border-radius: 50%;
+	background:  rgb(166, 208, 236);
 }

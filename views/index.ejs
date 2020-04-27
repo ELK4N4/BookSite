@@ -1,1 +1,450 @@
-Welcome to <%= name %> page!
+<div  id="BooksList" hidden>
+    <div class="title" style="font-weight: bold; top: 0px;"  >
+        <div style="padding: 1vh;font-size: 5vh;">CHOOSE YOUR BOOK:<br></div>
+    <p onclick="showFilter()" class="filter">Filter by geners, dates etc..</p>
+    <input class="searchbook" id="SearchB" oninput ="SearchB()" placeholder="Type a book..." type="text">
+    </div>
+    <br><br>
+    
+    <div class="AllFilterBooks"   id="MyBooks">
+        
+       
+        
+    </div>
+</div>
+<div style="color: white; padding-left: 1.5%;" id="BookDescription" hidden>
+
+
+</div>
+
+<div  class="topnav" id="myTopnav">
+    <a  id="About" onclick="changeToolbars(id);showStart();" class="active">About</a>
+    <a  id="Books" onclick="changeToolbars(id);showBooks()"  class="">Books</a>
+    <a onclick="showsign()" id="SignupT"   class="">Sign up</a>
+    <a id="LoginT" onclick="showLog()"  class="">Login</a> 
+    
+    
+    
+</div>
+
+<h6 id="start">
+    <div class="title">WELCOME TO OUR LIBRARY!</div>
+    <div class="Description"><br>We are pleased to offer you a <br>wide range of digital books from all geners with<br> a simple mouse click.</div>
+</h6> 
+
+
+
+
+<p id="black" class="darkbackround" hidden></p>
+<form class="sign" id="Sign" hidden>  
+    <h2 >Sign up here:</h2>
+    <input class="minput" id="UserS" type="text" placeholder="User name..." required>
+    <input class="minput" id="PasswordS" type="password" placeholder="Password..." required>
+    
+    <input class="minput" id="EmailS" type="email" placeholder="Email..." required><br>
+   
+    
+    <input class="minput" onclick="trySignin()" type="submit" value="Done!"><br>
+     <a class="m" onclick="showLog()">Already have an acount? log in</a>
+</form>
+
+<form id="filter" style="width: 300px; overflow-y: scroll;overflow-x: none; border-radius: 0%; text-align: left;" class="sign" hidden></form>
+    
+<form id="Log" class="sign" hidden>
+    <h2 >Login here:</h2>
+    <input class="minput" id="user" type="text" placeholder="User name..." required>
+    <input class="minput" id="password" type="password" placeholder="Password..." required><br>
+    <input class="minput" onclick="Trylog()" type="submit" value="Done!"><br>
+    <a class="m" onclick="showReconstruction()">Forgot details? Click here!</a><br><br>
+    <a class="m" onclick="showsign()">New user? Sign in</a>
+    
+</form>
+
+
+<form class="sign" id="reconstruction" hidden>
+    <h2 >Reconstruction:</h2>
+    <input class="minput" id="reconstructionemail" type="email" placeholder="Email..." required>
+    <p style="text-align: center; color: white;">Your details will be sent to you in the email you signed up with</p> 
+    <input class="minput" type="submit" onclick="SendEMail()" value="Done!">
+</form>
+
+
+
+<script>
+    
+
+
+
+    var BookDataBase =[{BookName: "Harry Potter and International Relations",Link:"https://books.google.co.il/books?id=DKcWE3WXoj8C&printsec=frontcover&hl=iw#v=onepage&q&f=false", Auyhor: "Iver B. Neumann",Description :"Why not take seriously the claim that Harry Potter's world intertwines with our own? In this timely yet otherworldly volume, more than a dozen scholars of international relations join hands to demonstrate how this well-loved artifact of popular culture reflects and shapes our own lifeworld. A wide range of historical and sociological sources shows how Harry's world contains aspects of our own. Practices such as quidditch dovetail quite clearly with 'muggle' sports, and the very British-ness of the books has, in translation into languages such as Turkish and Arabic, been transformed to reflect these unique cultures. Chapters on the political economy of the franchise as well as the scholarly problems of studying popular culture frame what is essentially a highly info-taining read.",ReleaseDate : {Year: 2006, Month:4, Day: 17},PageCount: 245,Gener: "Rowman"}
+                      ,{BookName: "The Struggle for Power in Early Modern Europe",Link:"https://books.google.co.il/books?id=7u5NuuVMOWgC&printsec=frontcover&hl=iw#v=onepage&q&f=false",Auyhor: "Daniel H. Nexon",Description :"Scholars have long argued over whether the 1648 Peace of Westphalia, which ended more than a century of religious conflict arising from the Protestant Reformations, inaugurated the modern sovereign-state system. But they largely ignore a more fundamental question: why did the emergence of new forms of religious heterodoxy during the Reformations spark such violent upheaval and nearly topple the old political order? In this book, Daniel Nexon demonstrates that the answer lies in understanding how the mobilization of transnational religious movements intersects with--and can destabilize--imperial forms of rule.",ReleaseDate : {Year: 2009, Month:4, Day: 0},PageCount: 354,Gener: "History"}];
+    var isConnected = false;
+    var FilterBookDataBase;
+    var FilterDataObject = {}
+    var SignHtml ='<a onclick="showsign()" id="Sign up"   class="">Sign up</a>';
+    var LoginHtml ='<a id="Login" onclick="showLog()"  class="">';
+
+    var Geners=[];
+    var dates={
+        MaxYear: 0,
+        MinYear:(new Date()).getFullYear()
+    }
+    var PageCount ={
+        Max:0,
+        Min:6000
+    }
+    function checkDate(Year){
+        return dates.MinYear <= Year && Year <= dates.MaxYear;
+    }
+    function createBookList(){
+        SearchB();
+
+    
+    }
+    function SendEMail(){
+        email = $('#reconstructionemail');
+        // שולח אימייל לשם משתמש
+    }  // הכולל את הסיסמא שלו והשם משתמש שלו
+    function getBookDB(){//BookDataBase מעביר את הספרים למשתנה 
+                        //במידה ואין שנה/חודש/יום להכניס את הערך 0 תקף גם לגבי מספר העמודים
+    }//כל פריט אחר שחסר יוכנס לו הערך מחרוזת ריקה
+    
+
+
+    //f12 הפונקציה חוסמת אפשרות לחיצה על 
+   $(document).keydown(function(e){if(e.which === 123){return false;}});
+
+
+
+    function Trylog(){
+        var connect =true
+        var user = $('#user').val();
+        var password = $('#password').val();
+        if(user === "" || password ==="")
+        {
+            alert("You must enter a username and password!");
+        }
+        else{
+            //בודק האם המשתמש הזין סיסמא ושם נכונים
+
+        }
+        if(connect){
+            //כאן יש להוסיף למשתמש בדאטא בייס מידע על התאריך הנוכחי
+            isConnected=true;
+            localStorage.setItem('lastconnect',user);
+            $('#black').hide();
+            $('#Log').hide();
+            $('#black').hide();
+            $('#Log').hide();
+            $('#SignupT').hide();
+            $('#LoginT').hide();
+            $('#myTopnav').append('<a id="connectedUser" style="background-color: rgba(165, 42, 42, 0);">|   '+user+'</a><img onclick="logout()" id="logout" class="logoutimg" src="https://www.iconsdb.com/icons/preview/white/logout-xxl.png" alt="">');
+
+        }
+        else{
+            alert("Wrong username or password!\nPlease try again.");
+        }
+
+    }
+    function logout()
+    {
+
+        isConnected=false;
+        $('#SignupT').show();
+        $('#LoginT').show();
+        $('#logout').remove();
+        $('#connectedUser').remove();
+        localStorage.setItem('lastconnect',"");
+    }
+    
+    function FilterBDB(){
+        $('#filter').hide();
+        $('#black').hide();
+        date=new Date();
+        Year =date.getFullYear(); 
+        FilterBookDataBase=[];
+       
+        BookDataBase.forEach(book => {
+            var CanAppend= true;
+            if(!((FilterDataObject.Geners).includes(book.Gener))){
+                CanAppend= false;
+            }
+            if(!(FilterDataObject.PageC.Maximum >= book.PageCount && FilterDataObject.PageC.Minimum <= book.PageCount)){
+                CanAppend= false;
+            }
+            switch(FilterDataObject.DateRadioB){
+                case "This year": if(Year != book.ReleaseDate.Year){CanAppend= false;} break;
+                case "Last year": if(Year-1 > book.ReleaseDate.Year){CanAppend= false;} break;
+                case "Last 2 years": if(Year-2 > book.ReleaseDate.Year){CanAppend= false;} break;
+                case "Last 5 years": if(Year-5 > book.ReleaseDate.Year){CanAppend= false;} break;
+                case "Last 10 years": if(Year-10 > book.ReleaseDate.Year){CanAppend= false;} break;
+                case "Older than 10 years": if(Year-10 <= book.ReleaseDate.Year){CanAppend= false;} break;
+            }
+            if(CanAppend){
+                FilterBookDataBase.push(book);
+            }
+        });
+         if(FilterDataObject.DateRadioB === "Newest"){
+            FilterBookDataBase.sort(function(a, b){return b.ReleaseDate.Year - a.ReleaseDate.Year});
+        }
+        if(FilterDataObject.DateRadioB === "Oldest"){
+            FilterBookDataBase.sort(function(a, b){return a.ReleaseDate.Year - b.ReleaseDate.Year});
+        }
+        createBookList();
+    }
+    function trySignin()
+    {
+        var success=false;
+        Email =$('#EmailS').val();
+        User =$('#UserS').val();
+        Password =$('#PasswordS').val();
+        if(Password==="" || User===""|| Email===""){
+            alert("You must enter a username, email and password!");
+        }
+        else{//בודק האם האימייל חוקי
+            var llegalmail=true;
+            if(llegalmail){//בודק האם המשתמש תפוס או הסיסמא במידה ולא מוסיף אותם לדאטא בייס
+                
+                showLog();
+
+            }
+            else{
+                alert("Illegal email!");
+            }
+
+        }
+    }
+
+        
+    
+    function changeRadio(){
+        
+        var radioValue = $("input[name='radio']:checked").val();
+        FilterDataObject.DateRadioB = radioValue;    
+    }
+    function changeCheckBox(id){
+        if ($('#'+id).is(':checked')){
+            FilterDataObject.Geners.push(id);
+        }
+        else{
+            FilterDataObject.Geners.splice(FilterDataObject.Geners.indexOf(id),1);
+        }
+    }
+    
+    function getVals(){
+    
+    var parent = this.parentNode;
+    var slides = parent.getElementsByTagName("input");
+    var slide1 = parseFloat( slides[0].value );
+    var slide2 = parseFloat( slides[1].value );
+
+    if( slide1 > slide2 ){ var tmp = slide2; slide2 = slide1; slide1 = tmp; }
+
+    var displayElement = parent.getElementsByClassName("rangeValues")[0];
+    displayElement.innerHTML = slide1 + " - " + slide2;
+    FilterDataObject.PageC ={Minimum: slide1 , Maximum: slide2 };
+    
+}
+
+
+
+
+
+
+    function createFilter()
+    {
+        
+        radioOptions = ["Newest","Oldest"];
+        date=new Date();
+        Year =date.getFullYear(); 
+        if (checkDate(Year))
+        {radioOptions.push("This year");}
+        if (checkDate(Year-1))
+        {radioOptions.push("Last year");}
+        if (checkDate(Year-2))
+        {radioOptions.push("Last 2 years");}
+        if (checkDate(Year-5))
+        {radioOptions.push("Last 5 years");}
+        if (checkDate(Year-10))
+        {radioOptions.push("Last 10 years");}
+        if (dates.MinYear< Year-10)
+        {radioOptions.push("Older than 10 years");}
+
+        
+
+        if (Geners.length>0){
+            $('#filter').append('<p class="Ftitle">GENERS:</p>');
+        
+        Geners.forEach(element => {
+            $('#filter').append( '<input onchange="changeCheckBox(id)" class="regular-checkbox" type="checkbox" id="'+element+'" name="'+element+'" value="'+element+'" checked> ');
+            $('#filter').append('<label class="options" for="'+element+'">'+element+'</label><br><br>');
+        });
+        $('#filter').append('<p class="Ftitle">PAGE NUMBERS:</p>');
+        $('#filter').append('<section style=" margin: auto;width: 65%;" class="range-slider"><span class="rangeValues Rvalue"></span><input  style="margin-top: 14px;" value="'+PageCount.Min+'" min="'+PageCount.Min+'" max="'+PageCount.Max+'" step="1" type="range"><input style="margin-top: 14px;" value="'+PageCount.Max+'" min="'+PageCount.Min+'" max="'+PageCount.Max+'" step="1" type="range"></section><br><br>');
+        $('#filter').append('<p class="Ftitle">RELEASE DATE:</p>');
+        radioOptions.forEach(element => {
+            $('#filter').append('<label class="container">'+element+' <input onchange="changeRadio()" type="radio" id ="'+element+'" value="'+element+'" name="radio"> <span class="checkmark"></span> </label><br>');
+        });
+        $('#Newest').prop("checked", true); 
+        $('#filter').append('<input class="minput" style="margin-left:25%;" type="submit" onclick="FilterBDB()" value="Done!">');      
+    
+    }
+}
+
+
+
+    
+
+    function SearchB(){
+        $('#MyBooks').empty();
+        var SearchBook = ($('#SearchB').val()).toLowerCase();
+        FilterBookDataBase.forEach(element=> {
+            if((((element.BookName)).toLowerCase()).includes(SearchBook))
+            {
+                $('#MyBooks').append('<div class="bk" onclick="showDescription(id)" id="'+element.BookName+'" style="flex: 0 0 25em;padding: 25px;width: 250px;"> <div style="-webkit-filter : hue-rotate(180deg);filter : hue-rotate('+element.Color+'deg);" class="b BookStyle"><h1 class="BookName">'+element.BookName+'</h1></div> </div>');
+        
+            }
+        });    
+    }
+    function showDescription(id){
+        if(isConnected){
+        $('#BookDescription').empty();
+        $('#BooksList').hide();
+        index = FilterBookDataBase.findIndex(x=> x.BookName === id);
+        CurObject = FilterBookDataBase[index];
+        
+        document.getElementById("Books").className="";
+        $('#BookDescription').append('<br><br><br><h1 class="d1">'+CurObject.BookName+'</h1>');
+        if(CurObject.Auyhor!=""){$('#BookDescription').append('<h1 class="d6">By: '+CurObject.Auyhor+'</h1>');}
+        
+        if(CurObject.ReleaseDate.Day ===0 && CurObject.ReleaseDate.Month ===0)
+        {
+            if(CurObject.ReleaseDate.Year !=0)
+            {
+                $('#BookDescription').append('<h1 class="d2">Release Date: '+CurObject.ReleaseDate.Year+'</h1>');
+            }
+        }
+        else if(CurObject.ReleaseDate.Day ===0)
+            {
+                $('#BookDescription').append('<h1 class="d2">Release Date: '+CurObject.ReleaseDate.Month+' / '+CurObject.ReleaseDate.Year+'</h1>');
+            }
+        else 
+            {
+                $('#BookDescription').append('<h1 class="d2">Release Date: '+CurObject.ReleaseDate.Day+' / '+CurObject.ReleaseDate.Month+' / '+CurObject.ReleaseDate.Year+'</h1>');
+            }
+        if(CurObject.PageCount!=0){$('#BookDescription').append('<h1 class="d2">'+CurObject.PageCount+' Pages</h1>');}
+        if(CurObject.Gener!=""){$('#BookDescription').append('<h1 class="d2">Gener: '+CurObject.Gener+'</h1>');}
+        if(CurObject.Description!=""){$('#BookDescription').append('<h1 class="d5">'+CurObject.Description+'</h1>');}
+        $('#BookDescription').fadeIn(3000);}
+        else{
+            showLog();
+            alert("You have to log in to view the books")
+        }
+        $('#BookDescription').append('<button class="minput" style="font-size: 25px" onclick="window.open(&quot;'+CurObject.Link+'&quot;);">I want to read!</button>');
+        
+    }
+
+    function showBooks()
+    { 
+        $('#BookDescription').hide();
+        $('#start').hide();
+        if($('#BooksList').is(":hidden"))
+        {   
+            $('#BooksList').fadeIn(3000);
+        }
+    }
+
+    function Resetall()
+    {
+        
+        $('#filter').hide();
+        $('#reconstruction').trigger("reset");
+        $('#Sign').trigger("reset");
+        $('#Log').trigger("reset");
+    }
+
+    function showReconstruction(){
+        Resetall();
+        $('#reconstruction').show();
+        $('#Sign').hide();
+        $('#black').show();
+        $('#Log').hide();
+    }
+
+
+    function showLog(){
+        Resetall();
+        $('#reconstruction').hide();
+        $('#Log').show();
+        $('#black').show();
+        $('#Sign').hide();
+    }
+
+    $("form").submit(function() { return false; });
+    $("input[type='submit']").click(function() { 
+        if($(this).parent().attr('id')==='filter') {FilterBDB()}; 
+        return false; });
+    
+    function showsign(){
+        Resetall();
+        $('#reconstruction').hide();
+        $('#Log').hide()
+        $('#Sign').show();
+        $('#black').show();
+    }
+    function showFilter(){
+        $('#black').show();
+        $('#filter').show();
+    }
+    function showStart(){
+        $('#BookDescription').hide();
+        $('#BooksList').hide();
+        if($('#start').is(":hidden"))
+        {   
+            $('#start').fadeIn(3000);
+        }
+    }
+    
+    $(function()
+    {
+
+        if(localStorage.getItem('lastconnect')!=null && localStorage.getItem('lastconnect')!="")
+        {
+            isConnected=true;
+            $('#SignupT').hide();
+            $('#LoginT').hide();
+            $('#myTopnav').append('<a id="connectedUser" style="background-color: rgba(165, 42, 42, 0);">|   '+localStorage.getItem('lastconnect')+'</a><img onclick="logout()" id="logout" class="logoutimg" src="https://www.iconsdb.com/icons/preview/white/logout-xxl.png" alt="">');
+
+        }
+        getBookDB();
+        BookDataBase.forEach(book=>{ 
+        book.Color = (1+Math.floor(Math.random() * 360))
+        dates.MaxYear = Math.max(book.ReleaseDate.Year,dates.MaxYear);
+        dates.MinYear = Math.min(book.ReleaseDate.Year,dates.MinYear);
+        PageCount.Max = Math.max(book.PageCount,PageCount.Max);
+        PageCount.Min = Math.min(book.PageCount,PageCount.Min);
+        if(!(Geners.includes(book.Gener))){Geners.push(book.Gener);}
+        });
+        createFilter();
+        FilterBookDataBase =BookDataBase;
+        FilterDataObject.Geners =Geners;
+        FilterBookDataBase.sort(function(a, b){return b.ReleaseDate.Year - a.ReleaseDate.Year});
+        createBookList();
+        $('#start').hide();
+        showStart();
+        $('#black').click(function(){
+            if($('#filter').is(":visible")){FilterBDB();}
+            Resetall();
+            
+            $('#reconstruction').hide();
+            $('#filter').hide();
+            $('#Sign').hide();
+            $('#black').hide();
+            $('#Log').hide()
+    });
+    
+           
+    
+
+
+    })
+</script>
