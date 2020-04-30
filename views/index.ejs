@@ -116,7 +116,7 @@
 
 
     function Trylog(){
-        var connect =true
+        var connect =false
         var user = $('#user').val();
         var password = $('#password').val();
         if(user === "" || password ==="")
@@ -127,22 +127,39 @@
             //בודק האם המשתמש הזין סיסמא ושם נכונים
 
         }
+            $.ajax({
+                url: "/users/login",
+                type: "get",
+                data: { 
+                    "username": user, 
+                    "password": password
+                },
+                async: false,
+                success: function(response) {
+                    connect = true
+                },
+                error: function(xhr) {
+                    connect = false
+                }
+                });
+        
         if(connect){
-            //כאן יש להוסיף למשתמש בדאטא בייס מידע על התאריך הנוכחי
-            isConnected=true;
-            localStorage.setItem('lastconnect',user);
-            $('#black').hide();
-            $('#Log').hide();
-            $('#black').hide();
-            $('#Log').hide();
-            $('#SignupT').hide();
-            $('#LoginT').hide();
-            $('#myTopnav').append('<a id="connectedUser" style="background-color: rgba(165, 42, 42, 0);">|   '+user+'</a><img onclick="logout()" id="logout" class="logoutimg" src="https://www.iconsdb.com/icons/preview/white/logout-xxl.png" alt="">');
-
+        //כאן יש להוסיף למשתמש בדאטא בייס מידע על התאריך הנוכחי
+        isConnected=true;
+        localStorage.setItem('lastconnect',user);
+        $('#black').hide();
+        $('#Log').hide();
+        $('#black').hide();
+        $('#Log').hide();
+        $('#SignupT').hide();
+        $('#LoginT').hide();
+        $('#myTopnav').append('<a id="connectedUser" style="background-color: rgba(165, 42, 42, 0);">|   '+user+'</a><img onclick="logout()" id="logout" class="logoutimg" src="https://www.iconsdb.com/icons/preview/white/logout-xxl.png" alt="">');
         }
         else{
             alert("Wrong username or password!\nPlease try again.");
         }
+
+       
 
     }
     function logout()
@@ -200,17 +217,21 @@
         if(Password==="" || User===""|| Email===""){
             alert("You must enter a username, email and password!");
         }
-        else{//בודק האם האימייל חוקי
-            var llegalmail=true;
-            if(llegalmail){//בודק האם המשתמש תפוס או הסיסמא במידה ולא מוסיף אותם לדאטא בייס
-                
-                showLog();
-
-            }
-            else{
-                alert("Illegal email!");
-            }
-
+        else{
+            $.post("/users/register",
+                {
+                    "username": User,
+                    "password": Password,
+                    "email": Email
+                },
+                function(data, status){
+                    if(data === 'used') { //בודק האם שם המשתמש תפוס
+                        alert('Username is used');
+                    } else {
+                        showLog();
+                    }
+                }
+            );
         }
     }
 

@@ -10,6 +10,7 @@ const bodyParser = require('body-parser');
 /* Import Routers */
 const indexRouter = require('./routes/index.js');
 const booksRouter = require('./routes/books.js');
+const usersRouter = require('./routes/users.js');
 
 /* Constant Variables */
 const PORT = process.env.PORT || 3000;
@@ -35,6 +36,7 @@ db.once('open', () => {console.log('Mongoose is connected');});
 /* Middleware */
 app.use('/', indexRouter);
 app.use('/books', booksRouter);
+app.use('/users', usersRouter);
 
 /* Server Listening */
 app.listen(PORT, '0.0.0.0', () => {
