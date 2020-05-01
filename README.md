@@ -48,7 +48,7 @@ We use **Nodemon** module to run the server
 * HTML
 * CSS
 * JavaScript
-* EJS
+* JQuery
 
 ### BackEnd
 * Node.js
@@ -56,6 +56,7 @@ We use **Nodemon** module to run the server
 * Mongoose.js
 * MongoDB
 * fs module
+* EJS
 
 ## Team
 
