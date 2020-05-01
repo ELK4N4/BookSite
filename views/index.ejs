@@ -116,17 +116,13 @@
 
 
     function Trylog(){
-        var connect =false
+        var connect = false
         var user = $('#user').val();
         var password = $('#password').val();
-        if(user === "" || password ==="")
-        {
+        if(user === "" || password ==="") {
             alert("You must enter a username and password!");
-        }
-        else{
+        } else {
             //בודק האם המשתמש הזין סיסמא ושם נכונים
-
-        }
             $.ajax({
                 url: "/users/login",
                 type: "get",
@@ -141,23 +137,25 @@
                 error: function(xhr) {
                     connect = false
                 }
-                });
+            });
+
+            if(connect){
+            //כאן יש להוסיף למשתמש בדאטא בייס מידע על התאריך הנוכחי
+            isConnected=true;
+            localStorage.setItem('lastconnect',user);
+            $('#black').hide();
+            $('#Log').hide();
+            $('#black').hide();
+            $('#Log').hide();
+            $('#SignupT').hide();
+            $('#LoginT').hide();
+            $('#myTopnav').append('<a id="connectedUser" style="background-color: rgba(165, 42, 42, 0);">|   '+user+'</a><img onclick="logout()" id="logout" class="logoutimg" src="https://www.iconsdb.com/icons/preview/white/logout-xxl.png" alt="">');
+            }
+            else{
+                alert("Wrong username or password!\nPlease try again.");
+            }
+        }
         
-        if(connect){
-        //כאן יש להוסיף למשתמש בדאטא בייס מידע על התאריך הנוכחי
-        isConnected=true;
-        localStorage.setItem('lastconnect',user);
-        $('#black').hide();
-        $('#Log').hide();
-        $('#black').hide();
-        $('#Log').hide();
-        $('#SignupT').hide();
-        $('#LoginT').hide();
-        $('#myTopnav').append('<a id="connectedUser" style="background-color: rgba(165, 42, 42, 0);">|   '+user+'</a><img onclick="logout()" id="logout" class="logoutimg" src="https://www.iconsdb.com/icons/preview/white/logout-xxl.png" alt="">');
-        }
-        else{
-            alert("Wrong username or password!\nPlease try again.");
-        }
 
        
 
